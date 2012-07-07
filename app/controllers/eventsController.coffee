@@ -3,7 +3,7 @@ class App.EventsController extends App.ApplicationController
   index: ->
     App.Event.where(@criteria()).all (error, collection) =>
       @render "index"
-
+###
   new: ->
     resource = new App.Event
     @render "new"
@@ -20,8 +20,8 @@ class App.EventsController extends App.ApplicationController
       if resource
         @render "show"
       else
-        @redirectTo "index"
-
+        @redirectTo redirect("/me")
+###
   edit: ->
     App.Event.find @params.id, (error, resource) =>
       if resource
@@ -45,3 +45,11 @@ class App.EventsController extends App.ApplicationController
         resource.destroy (error) =>
           @redirectTo "index"
 ###
+  respond: ->
+    # App.Event.find @params.id (error, resources) =>
+    #   if error
+    #     @redirectTo redirect("/me")
+    #   else
+    #     # TODO update responded = true if matches @params.id
+    #     =>
+    @redirectTo redirect("/")

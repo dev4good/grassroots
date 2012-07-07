@@ -22,3 +22,13 @@ class App.ApplicationController extends Tower.Controller
         data.users = users
         next()
     ], callback
+
+  # Display userinfo page
+  # - Display all resources associated to user
+  userinfo: ->
+    id = "" # Get current logged in user's ID
+    @render "userinfo"
+
+  # Display offer entry form
+  offer: ->
+    @render "offer"

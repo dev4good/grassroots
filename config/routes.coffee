@@ -3,11 +3,11 @@ Tower.Route.draw ->
   @resources "resources"
   @resources "users"
 
-  @match "/me", to: "application#userinfo" # Show user page
-  @match "/offer", to: "application#offer" # Show offer page
+  @match "/me", to: "application#userinfo", via: "get"  # Show user page
 
-  @match "/item/add", to: "event#new"
-  @match "/item/:id", to: "event#show"
-  @match "/item/:id/markdone", to: "event#markdone", via: "post"
+  @match "/offer", to: "event#new", via: "get"          # Show offer entry form
+  @match "/item/add", to: "event#create", via: "post"   # Commit new offer
+  @match "/item/:id", to: "event#show", via: "get"      # Display details of offer/req
+  @match "/item/:id/respond", to: "event#respond", via: "post" # Mark responded
   
   @match "/", to: "application#welcome"
