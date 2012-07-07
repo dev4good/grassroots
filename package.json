@@ -1,0 +1,11 @@
+{
+    "name": "grassroots"
+  , "version": "0.0.1"
+  , "repository": {
+    "type": "git",
+    "url": "http://github.com/dev4good/grassroots"
+  }
+  , "dependencies": {
+      "tower": "0.4.0"
+  }
+}
