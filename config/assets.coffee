@@ -8,6 +8,8 @@ module.exports =
       "/app/client/controllers/usersController"
       "/app/models/event"
       "/app/client/controllers/eventsController"
+      "/app/models/resource"
+      "/app/models/resource"
     ]
 
     lib: [
@@ -51,6 +53,8 @@ module.exports =
       "/test/client"
       "/test/models/userTest"
       "/test/models/eventTest"
+      "/test/models/resourceTest"
+      "/test/models/resourceTest"
     ]
 
   stylesheets:
