@@ -7,6 +7,7 @@ module.exports =
       "/app/models/user"
       "/app/client/controllers/usersController"
       "/app/models/event"
+      "/app/client/controllers/eventsController"
     ]
 
     lib: [

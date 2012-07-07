@@ -16,6 +16,7 @@ module.exports =
     edit: "Editing %{name}"
 
   links:
+    events: "Event"
     users: "User"
     default: "%{name}"
     home: "Home"
