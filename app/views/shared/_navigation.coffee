@@ -2,6 +2,7 @@ linkTo t("title"), "/", class: "brand"
 
 div class: "nav-collapse", ->
   ul class: "nav", ->
+    navItem t("links.users"), urlFor(App.User)
   ul class: "nav pull-right", ->
     li class: "dropdown", ->
       linkTo t("links.docs"), "#", class: "dropdown-toggle", "data-toggle": "dropdown", ->

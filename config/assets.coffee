@@ -5,6 +5,7 @@ module.exports =
       "/config/routes"
       "/app/views/templates"
       "/app/models/user"
+      "/app/client/controllers/usersController"
     ]
 
     lib: [
