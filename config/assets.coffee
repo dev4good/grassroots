@@ -10,6 +10,7 @@ module.exports =
       "/app/client/controllers/eventsController"
       "/app/models/resource"
       "/app/models/resource"
+      "/app/client/controllers/resourcesController"
     ]
 
     lib: [
