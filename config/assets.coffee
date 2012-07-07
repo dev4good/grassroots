@@ -6,6 +6,7 @@ module.exports =
       "/app/views/templates"
       "/app/models/user"
       "/app/client/controllers/usersController"
+      "/app/models/event"
     ]
 
     lib: [
@@ -48,6 +49,7 @@ module.exports =
       "/vendor/javascripts/design.io"
       "/test/client"
       "/test/models/userTest"
+      "/test/models/eventTest"
     ]
 
   stylesheets:
