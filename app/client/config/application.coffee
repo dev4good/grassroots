@@ -5,5 +5,6 @@ class App extends Tower.Application
     @use Tower.Middleware.Router
 
   bootstrap: (data) ->
+    @User.load(data.users) if data.users
 
 window.App = (new App).initialize()
