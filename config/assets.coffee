@@ -4,13 +4,12 @@ module.exports =
       "/app/client/config/application"
       "/config/routes"
       "/app/views/templates"
-      "/app/models/user"
-      "/app/client/controllers/usersController"
       "/app/models/event"
+      "/app/models/resource"
+      "/app/models/user"
       "/app/client/controllers/eventsController"
-      "/app/models/resource"
-      "/app/models/resource"
       "/app/client/controllers/resourcesController"
+      "/app/client/controllers/usersController"
     ]
 
     lib: [
@@ -52,10 +51,9 @@ module.exports =
       "/vendor/javascripts/chai"
       "/vendor/javascripts/design.io"
       "/test/client"
-      "/test/models/userTest"
       "/test/models/eventTest"
       "/test/models/resourceTest"
-      "/test/models/resourceTest"
+      "/test/models/userTest"
     ]
 
   stylesheets:

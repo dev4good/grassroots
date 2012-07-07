@@ -2,8 +2,8 @@ linkTo t("title"), "/", class: "brand"
 
 div class: "nav-collapse", ->
   ul class: "nav", ->
-    navItem t("links.resources"), urlFor(App.Resource)
     navItem t("links.events"), urlFor(App.Event)
+    navItem t("links.resources"), urlFor(App.Resource)
     navItem t("links.users"), urlFor(App.User)
   ul class: "nav pull-right", ->
     li class: "dropdown", ->

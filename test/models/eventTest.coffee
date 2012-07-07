@@ -8,6 +8,8 @@ describe "App.Event", ->
         description: "A description"
         location: "A location"
         tags: "A tags"
+        type: "A type"
+        responded: "A responded"
 
       done()
 
@@ -22,5 +24,11 @@ describe "App.Event", ->
 
     test "tags", ->
       assert.ok event.get("tags")
+
+    test "type", ->
+      assert.ok event.get("type")
+
+    test "responded", ->
+      assert.ok event.get("responded")
 
   describe "relations", ->
