@@ -1,3 +1,4 @@
+passport = require 'passport'
 class App.ApplicationController extends Tower.Controller
   @layout "application"
 
@@ -32,3 +33,9 @@ class App.ApplicationController extends Tower.Controller
   # Display offer entry form
   offer: ->
     @render "offer"
+
+  auth: ->
+    passport.authenticate(@params.provider) @request, @response, -> console.log arguments
+
+  authverify: ->
+    passport.authenticate 'google', { successRedirect: '/', failureRedirect: '/login' }

@@ -11,3 +11,5 @@ Tower.Route.draw ->
   @match "/item/:id/respond", to: "event#respond", via: "post" # Mark responded
   
   @match "/", to: "application#welcome"
+  @match '/auth/:provider', to: 'application#auth'
+#  @match '/auth/google/return', to: 'application#authverify'
