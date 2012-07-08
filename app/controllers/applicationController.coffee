@@ -1,34 +1,24 @@
 class App.ApplicationController extends Tower.Controller
   @layout "application"
 
-  @beforeAction "bootstrap"#, only: "welcome"
-
-  welcome: ->
-    @render "welcome", locals: {@bootstrapData}
-
-  # Example of how you might bootstrap a one-page application.
-  bootstrap: (callback) ->
-    data = @bootstrapData = {}
-
-    # for every model you add, you can add it to the bootstrap dataset by using this async helper.
-    _.series [
-      (next) => App.Event.all (error, events) =>
-        data.events = events
-        next()
-      (next) => App.Resource.all (error, resources) =>
-        data.resources = resources
-        next()
-      (next) => App.User.all (error, users) =>
-        data.users = users
-        next()
-    ], callback
-
+  #
   # Display userinfo page
   # - Display all resources associated to user
+  #
   userinfo: ->
-    id = "" # Get current logged in user's ID
-    @render "userinfo"
+    uid = "" # TODO Get current logged in user's ID
+    App.User.find uid, (err, usr) =>
+      console.log "User is: ", usr
+      if App.Resource.count > 0
+        App.Resource.anyOf( owner : _id: usr._id, taker: _id: usr._id).all(err, res) =>
+          data = { user: usr, resources: res }
+      else
+        App.Resource.all(err, res) =>
+          data = { user: usr, resources: [] }
+          @render "userinfo", locals: data
 
-  # Display offer entry form
-  offer: ->
-    @render "offer"
+  #
+  # Display a landing page
+  #
+  landing: ->
+    @render "landing"

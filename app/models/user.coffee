@@ -1,9 +1,8 @@
 class App.User extends Tower.Model
-  @field "nick", type: "String"
+  @field "nick",      type: "String"
   @field "firstName", type: "String"
-  @field "lastName", type: "String"
+  @field "lastName",  type: "String"
 
-  @hasMany "events"
   @hasMany "resources"
 
   @timestamps()

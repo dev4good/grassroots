@@ -3,11 +3,8 @@ Tower.Route.draw ->
   @resources "resources"
   @resources "users"
 
-  @match "/me", to: "application#userinfo", via: "get"  # Show user page
+  @match "/me", to: "application#userinfo", via: "get" # Show user page
+  @match "/",   to: "application#landing",  via: "get" # Show landing page
 
-  @match "/offer", to: "event#new", via: "get"          # Show offer entry form
-  @match "/item/add", to: "event#create", via: "post"   # Commit new offer
-  @match "/item/:id", to: "event#show", via: "get"      # Display details of offer/req
-  @match "/item/:id/respond", to: "event#respond", via: "post" # Mark responded
-  
-  @match "/", to: "application#welcome"
+  @match "/search/:keyword", to: "resources#search",  via: "get" # Search for keywords
+  @match "/_filter/:prefix", to: "resources#findall", via: "get" # Get filtered JSON for autocomplete
