@@ -1,4 +1,5 @@
 class App.ResourcesController extends App.ApplicationController
+  ###
   index: ->
     App.Resource.where(@criteria()).all (error, collection) =>
       @render "index"
@@ -43,6 +44,7 @@ class App.ResourcesController extends App.ApplicationController
       else
         resource.destroy (error) =>
           @redirectTo "index"
+  ###
 
   # Search Results
   # Array of Resources after search/filter

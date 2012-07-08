@@ -1,4 +1,5 @@
 class App.UsersController extends App.ApplicationController
+###
   index: ->
     App.User.where(@criteria()).all (error, collection) =>
       @render "index"
@@ -43,3 +44,4 @@ class App.UsersController extends App.ApplicationController
       else
         resource.destroy (error) =>
           @redirectTo "index"
+###
